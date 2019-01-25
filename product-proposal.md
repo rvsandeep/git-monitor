@@ -1,12 +1,14 @@
 ## Github as a growth Monitor
 
-GitHub has become a defacto standard for organizations to host code and manage a major chunk of development activities. It's vast community of active developers act as a catalyst to the fast paced progress of product. Also, the global community helps to onboard anyone new to GitHub easily.
+GitHub has become a defacto standard for organizations to host code and manage a major chunk of development activities. It's vast community of active developers are a catalyst to the fast paced progress of product. Also, the global community helps to onboard anyone new to GitHub easily.
 
 GitHub provides a variety of features to track state of a project, plan milestones, track bugs, contributions and so on. As an organization evolves, the house keeping activities become overwhelmingly tedious and companies move to deploying separate tools for managing and tracking projects. Instead, GitHub Data could be leveraged to track project health, bug status and monitor progress.
 
-### Business Usecase
+Github data could also be used to track how different users are leveraging the open source products. I'm using the data to calculate open source projects outreach, and enable open source organizations to understand the product market better.
 
-Startups and OpenSource communities, with limited resource can leverage GitHub for monitoring project progress and tracking issues.
+### Business Value
+
+I'm using Github data to build a dashboard that tracks open source projects and maps
 
 ### Tech Stack
 

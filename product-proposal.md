@@ -14,7 +14,7 @@ Such a tool can enable teams to focuss resources on projects that have wider out
 
 ### Engineering Challenge
 
-Parsing unstructured data and aggregating data related to import statements from different projects and mapping them together. Projects in different languages require different rules to extract version and dependency information.
+Parsing unstructured data and aggregating import/dependency information from different projects with relations can be challenging considering the volume and variety of data.
 
 ### MVP
 

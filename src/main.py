@@ -1,4 +1,5 @@
 import pyspark
+import argparse
 import sys
 import os
 
@@ -12,6 +13,6 @@ parser.add_argument('--job', type=str, required=True)
 parser.add_argument('--job-args', nargs='*')
 args = parser.parse_args()
 
-sc = pyspark.SparkContext(appName=args.job_name)
+sc = pyspark.SparkContext(appName=args.job_name, )
 job_module = importlib.import_module('jobs.%s' % args.job)
 job_module.analyze(sc, job_args)

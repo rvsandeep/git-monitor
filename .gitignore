@@ -7,3 +7,5 @@ src/utils/__pycache__
 
 
 src/libs/
+
+src/credentials.py

@@ -1,7 +1,7 @@
 from py2neo import Graph
 import credentials
 
-def analyze(sc):
+def analyze(sc, job_args=None):
     gg = Graph( bolt=True,
                 host=credentials.NEO4J_HOST, secure=True,
                 user=credentials.NEO4J_USERNAME, password=credentials.NEO4J_PASSWORD)

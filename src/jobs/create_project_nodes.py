@@ -8,8 +8,8 @@ def analyze(sc, job_args=None):
 
     hadoop_conf=sc._jsc.hadoopConfiguration()
     hadoop_conf.set("fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
-    hadoop_conf.set("fs.s3a.awsAccessKeyId", os.environ['AWS_ACCESS_KEY_ID'])
-    hadoop_conf.set("fs.s3a.awsSecretAccessKey", os.environ['AWS_SECRET_ACCESS_KEY'])
+    hadoop_conf.set("fs.s3a.awsAccessKeyId", credentials.AWS_ACCESS_KEY_ID)
+    hadoop_conf.set("fs.s3a.awsSecretAccessKey", credentials.AWS_SECRET_ACCESS_KEY)
 
     projects = spark.read.format("csv").option("header", "true").load("s3a://rvsandeep-bucket/projects.csv")
 

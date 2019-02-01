@@ -4,7 +4,10 @@ keys/
 
 src/models/__pycache__
 src/utils/__pycache__
-
+src/.ipynb_checkpoints/
+src/*.ipynb
+src/derby.log
+src/metastore
 
 src/libs/
 

@@ -16,4 +16,4 @@ args = parser.parse_args()
 
 sc = pyspark.SparkContext(appName=args.job)
 job_module = importlib.import_module('jobs.%s' % args.job)
-job_module.analyze(sc, job_args)
+job_module.analyze(sc, args.job_args)

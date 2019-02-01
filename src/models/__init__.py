@@ -1,3 +1,5 @@
+from py2neo.ogm import GraphObject, Property
+
 class Platform(GraphObject):
     __primarykey__ = "name"
 

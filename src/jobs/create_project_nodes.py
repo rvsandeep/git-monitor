@@ -1,5 +1,6 @@
 from py2neo import Graph
 import credentials
+from pyspark.sql import SparkSession
 
 def analyze(sc, job_args=None):
     gg = Graph( bolt=True,
@@ -10,6 +11,14 @@ def analyze(sc, job_args=None):
     hadoop_conf.set("fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
     hadoop_conf.set("fs.s3a.awsAccessKeyId", credentials.AWS_ACCESS_KEY_ID)
     hadoop_conf.set("fs.s3a.awsSecretAccessKey", credentials.AWS_SECRET_ACCESS_KEY)
+
+    # Creating SparkSession, Spark Context and SQL Context Objects
+    spark = SparkSession.builder \
+                .appName("S3 READ TEST") \
+                .config("spark.executor.cores", "6") \
+                .config("spark.executor.memory", "6gb") \
+    	    .config("spark.sql.join.preferSortMergeJoin", "false") \
+    	    .getOrCreate()
 
     projects = spark.read.format("csv").option("header", "true").load("s3a://rvsandeep-bucket/projects.csv")
 

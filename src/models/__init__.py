@@ -36,7 +36,7 @@ class Status(GraphObject):
 
 
 class Project(GraphObject):
-    __primarykey__ = "id"
+    __primarykey__ = "project_id"
 
     project_id = Property()
     name = Property()

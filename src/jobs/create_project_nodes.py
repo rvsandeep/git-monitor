@@ -20,8 +20,9 @@ def analyze(sc, job_args=None):
     	    .config("spark.sql.join.preferSortMergeJoin", "false") \
     	    .getOrCreate()
 
-    projects = spark.read.format("csv").option("header", "true").load("s3a://rvsandeep-bucket/projects.csv")
+    projects = spark.read.format("csv").option("header", "false").load("s3a://rvsandeep-bucket/projects.csv")
 
     projects_rdd_tf = projects.rdd.map(lambda x : util.populate_project(models.Project(), x))
 
-    projects_rdd_tf.take(5)
+    ls_ = projects_rdd_tf.collect()
+    print(ls_['ID'])

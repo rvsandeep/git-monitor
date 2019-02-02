@@ -2,7 +2,6 @@ from py2neo import Graph
 import credentials
 from pyspark.sql import SparkSession
 from utils import util
-import models
 
 def analyze(sc, job_args=None):
     gg = Graph( bolt=True,
@@ -24,9 +23,9 @@ def analyze(sc, job_args=None):
 
     projects = spark.read.format("csv").option("header", "false").load("s3a://rvsandeep-bucket/projects.csv")
 
-    projects_rdd_tf = projects.rdd.map(lambda x : util.populate_project(models.Project(), x))
+    projects_rdd_tf = projects.rdd.map(util.populate_project)
 
     ls_ = projects_rdd_tf.collect()
     for i in ls_:
-        print(i['project_id'])
+        print(i.project_id)
         break

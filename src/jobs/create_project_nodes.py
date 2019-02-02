@@ -22,10 +22,4 @@ def analyze(sc, job_args=None):
     	    .getOrCreate()
 
     projects = spark.read.format("csv").option("header", "false").load("s3a://rvsandeep-bucket/projects.csv")
-
-    projects_rdd_tf = projects.rdd.map(util.populate_project)
-
-    ls_ = projects_rdd_tf.collect()
-    for i in ls_:
-        print(i.project_id)
-        break
+    print(projects)

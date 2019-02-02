@@ -27,4 +27,6 @@ def analyze(sc, job_args=None):
     projects_rdd_tf = projects.rdd.map(lambda x : util.populate_project(models.Project(), x))
 
     ls_ = projects_rdd_tf.collect()
-    print(ls_['ID'])
+    for i in ls_:
+        print(i['project_id'])
+        break

@@ -22,4 +22,4 @@ def analyze(sc, job_args=None):
     	    .getOrCreate()
 
     projects = spark.read.format("csv").option("header", "false").load("s3a://rvsandeep-bucket/projects.csv")
-    print(projects)
+    print(projects.collect())

@@ -9,6 +9,7 @@ if os.path.exists('jobs.zip'):
 else:
     sys.path.insert(0, './jobs')
 
+os.environ['SPARK_HOME'] = os.getcwd()+'pyspark/'
 parser = argparse.ArgumentParser()
 parser.add_argument('--job', type=str, required=True)
 parser.add_argument('--job-args', nargs='*')

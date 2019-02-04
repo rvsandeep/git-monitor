@@ -1,6 +1,7 @@
 from py2neo import Graph
 import credentials
 from pyspark.sql import SparkSession
+from utils import util
 
 def analyze(sc, job_args=None):
     gg = Graph( bolt=True,
@@ -20,9 +21,5 @@ def analyze(sc, job_args=None):
     	    .config("spark.sql.join.preferSortMergeJoin", "false") \
     	    .getOrCreate()
 
-    projects = spark.read.csv("s3n://rvsandeep-bucket/projects.csv", header=True, inferSchema=True, multiLine=True, escape='"'')
-
-    projects_rdd_tf = projects.rdd.map(lambda x : util.populate_project(models.Project(), x))
-
-    ls_ = projects_rdd_tf.collect()
-    print(ls_['ID'])
+    projects = spark.read.format("csv").option("header", "false").load("s3a://rvsandeep-bucket/projects.csv")
+    print(projects.collect())

@@ -1,4 +1,7 @@
-def populate_project(project_node, project):
+import models
+
+def populate_project(project):
+    project_node = models.Project()
     project_node.project_id = project['ID']
     project_node.name = project['Name']
     project_node.created_timestamp = project['Created Timestamp']

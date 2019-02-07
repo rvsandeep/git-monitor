@@ -22,6 +22,8 @@ def process(sc, job_args=None):
 
     projects = spark.read.format("csv") \
                 .option("header", "true") \
+                .option('quote', '"') \
+                .option('escape', '"') \
                 .load("s3a://rvsandeep-bucket/projects.csv")
 
     sql_context.registerDataFrameAsTable(projects, "projects_tbl")

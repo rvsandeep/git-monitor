@@ -1,4 +1,5 @@
 from py2neo.ogm import GraphObject, Property, RelatedFrom, RelatedTo
+import re
 
 class Project(GraphObject):
     __primarykey__ = "project_id"
@@ -30,5 +31,9 @@ class Project(GraphObject):
         self.homepage = project['Homepage URL']
         self.source_rank = project['SourceRank']
         self.latest_release_publish_timestamp = project['Latest Release Publish Timestamp']
-        self.latest_release_number = project['Latest Release Number']
+        version_parsed = re.findall("\\b\\d+\\b", project['Latest Release Number'])
+        if len(version_parsed) !=0:
+            self.latest_release_number = version_parsed[0]
+        else :
+            self.latest_release_number = None
         self.last_synced_timestamp = project['Last synced Timestamp']

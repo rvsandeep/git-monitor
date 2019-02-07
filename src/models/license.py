@@ -9,4 +9,4 @@ class License(GraphObject):
     repositories = RelatedFrom("Repository", "HAS_LICENSE")
 
     def __init__(self, license):
-        self.name = license['Name']
+        self.name = license['Licenses']

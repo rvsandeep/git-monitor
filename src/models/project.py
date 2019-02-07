@@ -15,7 +15,6 @@ class Project(GraphObject):
     last_synced_timestamp = Property()
 
     versions = RelatedFrom("Version", "BELONGS_TO")
-
     repositories = RelatedTo("Repository")
     platform = RelatedTo("Platform")
     language = RelatedTo("Language")

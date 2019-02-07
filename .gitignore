@@ -1,7 +1,8 @@
 env/
 
-src/models/__pycache__
-src/utils/__pycache__
+*/__pycache__/
+*/*/__pycache__/
+
 src/.ipynb_checkpoints/
 src/*.ipynb
 src/derby.log

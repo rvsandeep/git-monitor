@@ -10,4 +10,4 @@ class Platform(GraphObject):
     versions = RelatedFrom("Version", "IS_IN_PLATFORM")
 
     def __init__(self, platform):
-        self.name = platform['Name']
+        self.name = platform['Platform']

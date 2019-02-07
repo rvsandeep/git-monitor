@@ -11,6 +11,13 @@ class GraphConnector():
 
     def create(self, nodes):
         tx = self.connector.begin()
-        for each in nodes:
-            tx.create(each)
-        tx.commit()
+        for i in nodes:
+            tx.create(i)
+        return tx.commit()
+
+
+def create(nodes):
+    gc = GraphConnector()
+    gc.create(nodes)
+    #[TODO: Update logic based on transaction successfully committed or notßßß]
+    return [True]

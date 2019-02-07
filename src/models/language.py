@@ -10,4 +10,4 @@ class Language(GraphObject):
     versions = RelatedFrom("Version", "WRITTEN_IN")
 
     def __init__(self, language):
-        self.name = language['Name']
+        self.name = language['Language']

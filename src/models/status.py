@@ -9,4 +9,4 @@ class Status(GraphObject):
     repositories = RelatedFrom("Repository", "STATUS")
 
     def __init__(self, status):
-        self.name = name
+        self.name = status['Status']

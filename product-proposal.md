@@ -6,7 +6,7 @@ Along with being a Version Control Application GitHub provides a variety of feat
 
 ### Business Value
 
-Such a tool can enable teams to focuss resources on projects that have wider outreach. It can be leveraged by business or executive team to priortize initiatives depending on the market. 
+Such a tool can enable teams to focuss resources on projects that have wider outreach. It can be leveraged by business or executive team to priortize initiatives depending on the market.
 
 ### Tech Stack
 
@@ -18,4 +18,4 @@ Parsing unstructured data and aggregating import/dependency information from dif
 
 ### MVP
 
-Query Bigquery and consume the data.
+Parse the Libraries IO data and visualize it in graph database.

@@ -5,19 +5,16 @@ import credentials
 class GraphConnector():
 
     def __init__(self):
-        self.connector = Graph( bolt=True,
+        self.connector = Graph( scheme='bolt+routing',
                     host=credentials.NEO4J_HOST, secure=True,
                     user=credentials.NEO4J_USERNAME, password=credentials.NEO4J_PASSWORD)
 
-    def create(self, nodes):
-        tx = self.connector.begin()
-        for i in nodes:
-            tx.create(i)
-        return tx.commit()
 
 
-def create(nodes):
+def create(node):
     gc = GraphConnector()
-    gc.create(nodes)
-    #[TODO: Update logic based on transaction successfully committed or notßßß]
-    return [True]
+    tx = gc.connector.begin()
+    tx.create(node)
+    tx.commit()
+    #[TODO: Update logic based on transaction successfully committed or not]
+    return

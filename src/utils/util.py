@@ -13,8 +13,10 @@ class GraphConnector():
 
 
 def create_nodes_in(partition):
-    gc = GraphConnector()
-    tx = gc.connector.begin()
+    #database topology may change while inserting too many records, graph connector
+    #has to be initialized before inserting for every node
     for node in partition:
+        gc = GraphConnector()
+        tx = gc.connector.begin()
         tx.merge(node)
-    tx.commit()
+        tx.commit()

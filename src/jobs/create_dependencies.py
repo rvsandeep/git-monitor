@@ -6,11 +6,7 @@ from utils import util
 #read dependency info and create dependency relation between two projects
 def process(sc, job_args=None):
 
-    spark = SparkSession.builder.appName("git-monitor") \
-            .config("spark.executor.cores", "8") \
-            .config("spark.executor.memory", "6gb") \
-            .config("spark.sql.join.preferSortMergeJoin", "false") \
-            .getOrCreate()
+    spark = SparkSession.builder.appName("git-monitor").getOrCreate()
 
     spark_context = spark.sparkContext
 

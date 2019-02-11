@@ -6,7 +6,9 @@ Along with being a Version Control Application GitHub provides a variety of feat
 
 ### Business Value
 
-Such a tool can enable teams to focuss resources on projects that have wider outreach. It can be leveraged by business or executive team to priortize initiatives depending on the market.
+* Monitoring Platform for developers to track software track and be up-to-date with progressing software world.
+* Understand the open source community code better and determine creditworthy of a library.
+* Avoid security loopholes or vulnerabilities that arise due to dependencies on 3rd party libraries.
 
 ### Tech Stack
 
@@ -14,7 +16,9 @@ Such a tool can enable teams to focuss resources on projects that have wider out
 
 ### Engineering Challenge
 
-Parsing unstructured data and aggregating import/dependency information from different projects with relations can be challenging considering the volume and variety of data.
+* Parsing version information of packages from different platforms.
+* Determining direct and indirect dependencies of packages.
+* Visualizing relevant data and removing irrelevant nodes.
 
 ### MVP
 

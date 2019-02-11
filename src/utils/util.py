@@ -2,6 +2,7 @@ import models
 from py2neo import Graph
 import credentials
 
+#Connector utility for Neo4J database
 class GraphConnector():
 
     def __init__(self):
@@ -11,10 +12,9 @@ class GraphConnector():
 
 
 
-def create(node):
+def create_nodes_in(partition):
     gc = GraphConnector()
     tx = gc.connector.begin()
-    tx.create(node)
+    for node in partition:
+        tx.merge(node)
     tx.commit()
-    #[TODO: Update logic based on transaction successfully committed or not]
-    return

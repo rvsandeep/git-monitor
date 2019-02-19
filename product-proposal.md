@@ -22,4 +22,5 @@ Along with being a Version Control Application GitHub provides a variety of feat
 
 ### MVP
 
-Parse the Libraries IO data and visualize it in graph database.
+* Parse the Libraries IO data to extract relations between different packages.
+* Visualize the relations in graph database.

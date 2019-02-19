@@ -20,6 +20,37 @@ Git-Monitor is a POC platform to enable organizations to leverage GitHub sort da
 ## Approach
 
 ## Project Structure
+The directory structure for the repo is of following format :
+```
+      ├── README.md
+      ├── execute.sh
+      ├── Makefile
+      ├── requirements.txt
+      ├── src
+      │   └──main.py
+      │   └──credentials.py
+      │   └──jobs
+      │       └── create_project_nodes.json
+      │       └── create_version_nodes.json
+      │       └── create_dependencies.json
+      │       └── database_operations.json
+      ├── models
+      |   └── project.py
+      |   └── language.py
+      |   └── license.py
+      |   └── platform.py
+      |   └── status.py
+      |   └── version.py
+      ├── tests
+      ├── libs
+      ├── utils
+          └── util.py
+```
+
+`src/main.py` is the main driver of the application.  
+`credentials.py` is used to define NEO4J and AWS access credentials.  
+All the spark jobs are placed in `src/jobs` folder.  
+The `/models` folder hosts the different data models for neo4j.
 
 ## Environment
 

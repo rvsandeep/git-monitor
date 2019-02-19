@@ -31,7 +31,7 @@ def process(sc, job_args=None):
 
     prj_nodes_rdd = projects.rdd.map(lambda x : Project(x)).persist(StorageLevel.MEMORY_AND_DISK)
     print(prj_nodes_rdd.getNumPartitions())
-    prj_nodes_rdd.mapPartitions(util.create_nodes_in).collect()
+    prj_nodes_rdd.mapPartitions(util.create_nodes_in).count
 
     establish_relationships(sql_context, sc)
 
@@ -61,7 +61,7 @@ def create_license_nodes(sql_context, sc):
 
 def establish_relationships(sql_context, sc):
     relationships = sql_context.sql("SELECT ID, Platform, Language, Status, Licenses from projects_tbl").persist(StorageLevel.MEMORY_AND_DISK)
-    relationships.rdd.mapPartitions(link_project_nodes).collect()
+    relationships.rdd.mapPartitions(link_project_nodes).count
 
 def link_project_nodes(relationships):
     gc = util.GraphConnector()

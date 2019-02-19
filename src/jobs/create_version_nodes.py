@@ -18,8 +18,9 @@ def process(sc, job_args=None):
                 .load("s3a://rvsandeep-bucket/versions-1.4.0-2018-12-22.csv")
 
     version_nodes_rdd = versions.rdd.map(lambda x : Version(x))
-    sc.parallelize(version_nodes_rdd.collect()).foreachPartition(util.create_nodes_in)
-    sc.parallelize(versions.rdd.collect()).foreach(link_version_project_nodes)
+    created_version_nodes = version_nodes_rdd.mapPartitions(util.create_nodes_in).count()
+    linked_versions = versions.rdd.map(link_version_project_nodes).count()
+    print("total versions created : ", created_version_nodes, linked_versions)
 
 #establish relationship with project nodes and version
 def link_version_project_nodes(version):

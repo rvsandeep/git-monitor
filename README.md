@@ -12,7 +12,7 @@ As part of my Insight Project, I built a data pipeline to monitor Github code ec
 
 ## Introduction
 
-Git-Monitor is a POC platform to enable organizations to leverage GitHub sort data and track internal package versions along with their dependencies. Recent events like EquiFax Data Breach where attackers exploited a vulnerable library being used by equifax to gain access to critical financial information of millions of people strengthens the importance of organizations to monitor the third party libraries, internal systems depend on.
+Git-Monitor is a platform to enable organizations to leverage GitHub data and track internal package versions along with their dependencies. Recent events like EquiFax Data Breach where attackers exploited a vulnerable library being used by equifax to gain access to critical financial information of millions of people strengthens the importance of organizations to monitor the third party libraries, internal systems depend on.
 
 [Google Slides](https://docs.google.com/presentation/d/17piEWtwxwMT8t5XVfJ0BHs1-1A_t7AkdP_w1gdvQENU/edit#slide=id.g4f145657b5_0_365)  
 [Project Link](http://rvsandeep.com/insightproject)

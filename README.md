@@ -30,10 +30,10 @@ The directory structure for the repo is of following format :
       │   └──main.py
       │   └──credentials.py
       │   └──jobs
-      │       └── create_project_nodes.json
-      │       └── create_version_nodes.json
-      │       └── create_dependencies.json
-      │       └── database_operations.json
+      │       └── create_project_nodes.py
+      │       └── create_version_nodes.py
+      │       └── create_dependencies.py
+      │       └── database_operations.py
       ├── models
       |   └── project.py
       |   └── language.py
